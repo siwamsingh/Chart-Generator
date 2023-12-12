@@ -1,22 +1,22 @@
 import React, { useState, useEffect, useCallback } from "react";
-import ChartType from "./components/ChartType";
-import useChart from "./hooks/useChart.js";
+import ChartType from "./Home-components/ChartType.jsx";
+import useChart from "../../hooks/useChart.js";
 
-import bar from "./images/bar.png";
-import bubble from "./images/bubble.png";
-import doughnut from "./images/doughnut.png";
-import horizontalBar from "./images/horizontalBar.png";
-import line from "./images/line.png";
-import pie from "./images/pie.png";
-import polarArea from "./images/polarArea.png";
-import radar from "./images/radar.png";
-import scatter from "./images/scatter.png";
+import bar from "../images/bar.png";
+import bubble from "../images/bubble.png";
+import doughnut from "../images/doughnut.png";
+import horizontalBar from "../images/horizontalBar.png";
+import line from "../images/line.png";
+import pie from "../images/pie.png";
+import polarArea from "../images/polarArea.png";
+import radar from "../images/radar.png";
+import scatter from "../images/scatter.png";
 
-import ChooseOptions from "./components/ChooseOptions";
-import InputData from "./components/InputData";
-import InputCoords from "./components/InputCoords.jsx";
+import ChooseOptions from "./Home-components/ChooseOptions.jsx";
+import InputData from "./Home-components/InputData.jsx";
+import InputCoords from "./Home-components/InputCoords.jsx";
 
-export default function App() {
+export default function Home() {
   const [type, setType] = useState("bar");
   const [color, setColor] = useState("transparent");
   const [format, setFormat] = useState("jpg");
@@ -83,11 +83,11 @@ export default function App() {
 
   return (
     <>
-      <div className=" bg-black text-white">
-        <h1 className=" text-white text-5xl text-center font-mono p-3 pb-6 border-b">
-          Chart Generator
+      <div className=" text-white">
+        <h1 className="text-3xl font-bold my-10 text-center">
+          CharGen: Lightning-Fast Chart Generation with React, Vite, and
+          QuickChart API 🚀
         </h1>
-
         <h2 className=" text-white text-xl sm:text-2xl font-mono px-4 mt-4">
           Choose the Chart you want : {type.toLocaleUpperCase()}
         </h2>
@@ -277,7 +277,7 @@ export default function App() {
             available.
           </h1>
           <h1 className="text-center text-lg font-serif pb-10 underline underline-offset-4">
-             Scatter and Bubble will be provided in next update
+            Scatter and Bubble will be provided in next update
           </h1>
           <div className="min-h-fit min-w-fit border">
             <img src={data} alt="no data entered" />
@@ -304,56 +304,6 @@ export default function App() {
           </div>
         </div>
       </div>
-
-      <footer className="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
-        <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-          <div className="sm:flex sm:items-center sm:justify-between">
-            <a
-              href="https://flowbite.com/"
-              className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
-            >
-              <img
-                src={radar}
-                className="h-10"
-                alt="ChartGen"
-              />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                ChartGen
-              </span>
-            </a>
-            <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-              <li>
-                <a  className="hover:underline me-4 md:me-6">
-                  About
-                </a>
-              </li>
-              <li>
-                <a className="hover:underline me-4 md:me-6">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a className="hover:underline me-4 md:me-6">
-                  Licensing
-                </a>
-              </li>
-              <li>
-                <a className="hover:underline">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-          <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2023{" "}
-            <a  className="hover:underline">
-              ChartGen™
-            </a>
-            . All Rights Reserved.
-          </span>
-        </div>
-      </footer>
     </>
   );
 }
